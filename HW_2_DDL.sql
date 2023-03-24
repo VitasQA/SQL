@@ -1,13 +1,12 @@
 --1. Создать таблицу employees
 --- id. serial,  primary key,
 --- employee_name. Varchar(50), not null
-
 CREATE TABLE employees_82 (
     id serial primary key,
     employee_name VARCHAR(50) NOT NULL
 );
---2. Наполнить таблицу employee 70 строками
 
+--2. Наполнить таблицу employee 70 строками
 insert into employees_82 (employee_name)
 values ('Aiden'), 
        ('Alexa'), 
@@ -85,14 +84,12 @@ select * from employees_82;
 --3.Создать таблицу salary
 --- id. Serial  primary key,
 --- monthly_salary. Int, not null
-
 CREATE TABLE salary_082 (
     id serial primary key,
     monthly_salary int NOT NULL
 );
 
 --4.Наполнить таблицу salary 15 строками
-
 insert into salary_082 (monthly_salary)
 values (500), 
        (1000), 
@@ -116,7 +113,6 @@ select * from salary_082;
 --- id. Serial  primary key,
 --- employee_id. Int, not null, unique
 --- salary_id. Int, not null
-
 CREATE TABLE employee_salary_82 (
     id serial primary key,
     employee_id int not null unique,
@@ -126,7 +122,6 @@ select * from employee_salary_82;
 
 --6. Наполнить таблицу employee_salary 40 строками:
 --- в 10 строк из 40 вставить несуществующие employee_id
-
 insert into employee_salary_82 (id, employee_id, salary_id)
 values (default, 1, 5), 
        (default, 3, 8), 
@@ -174,7 +169,6 @@ select * from employee_salary_82;
 --7. Создать таблицу roles
 --- id. Serial  primary key,
 --- role_name. int, not null, unique
-
 CREATE TABLE roles_82 (
     id serial primary key,
     role_name int not null unique
@@ -182,12 +176,10 @@ CREATE TABLE roles_82 (
 select * from roles_82;
 
 --8. Поменять тип столбца role_name с int на varchar(30)
-
 alter table roles_82 
 alter column role_name type varchar(30);
 
 --9. Наполнить таблицу roles 20 строками
-
 insert into roles_82 (role_name)
 values ('Junior Python developer'), 
        ('Middle Python developer'),
@@ -215,7 +207,6 @@ select * from roles_82;
 --- id. Serial  primary key,
 --- employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
 --- role_id. Int, not null (внешний ключ для таблицы roles, поле id)
-
 CREATE TABLE roles_employee_082 (
     id serial primary key,
     employee_id int not null unique, 
@@ -228,7 +219,6 @@ CREATE TABLE roles_employee_082 (
 select * from roles_employee_082;
 
 --11. Наполнить таблицу roles_employee 40 строками
-
 insert into roles_employee_082 (employee_id, role_id)
 values (1, 17), 
        (16, 2), 
