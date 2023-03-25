@@ -89,7 +89,7 @@ CREATE TABLE salary_082 (
     monthly_salary int NOT NULL
 );
 
---4.Наполнить таблицу salary_082 15 строками
+--4.Наполнить таблицу salary_082 16 строками
 insert into salary_082 (monthly_salary)
 values (500), 
        (1000), 
@@ -105,7 +105,8 @@ values (500),
        (6000),
        (6500),
        (7000),
-       (7500);
+       (7500),
+       (8000);
        
 select * from salary_082;
 
@@ -262,10 +263,3 @@ values (1, 17),
        (12, 4);
       
 select * from roles_employee_082;      
-
-      
-
-
-
-
-
