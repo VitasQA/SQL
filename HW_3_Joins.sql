@@ -10,62 +10,62 @@ from employee_salary_82
 join employees_82 on employee_salary_82.employee_id = employees_82.id
 join salary_082 on employee_salary_82.salary_id = salary_082.id;
 
--- 2. Âûâåñòè âñåõ ðàáîòíèêîâ ó êîòîðûõ ÇÏ ìåíüøå 2000.
+-- 2. Вывести всех работников у которых ЗП меньше 2000.
 select employee_name, monthly_salary
 from employee_salary_82
 join employees_82 on employee_salary_82.employee_id = employees_82.id
 join salary_082 on employee_salary_82.salary_id = salary_082.id
 where monthly_salary < 2000;
 
--- 3. Âûâåñòè âñå çàðïëàòíûå ïîçèöèè, íî ðàáîòíèê ïî íèì íå íàçíà÷åí. (ÇÏ åñòü, íî íå ïîíÿòíî êòî å¸ ïîëó÷àåò.)
+-- 3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 select monthly_salary, employee_name
 from employee_salary_82
 left join employees_82 on employee_salary_82.employee_id = employees_82.id 
 join salary_082 on employee_salary_82.salary_id = salary_082.id 
 where employee_name is null;
 
--- 4. Âûâåñòè âñå çàðïëàòíûå ïîçèöèè  ìåíüøå 2000 íî ðàáîòíèê ïî íèì íå íàçíà÷åí. (ÇÏ åñòü, íî íå ïîíÿòíî êòî å¸ ïîëó÷àåò.)
+-- 4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.
 select monthly_salary, employee_name
 from employee_salary_82
 left join employees_82 on employee_salary_82.employee_id = employees_82.id 
 join salary_082 on employee_salary_82.salary_id = salary_082.id 
 where employee_name is null and monthly_salary < 2000;
 
--- 5. Íàéòè âñåõ ðàáîòíèêîâ êîìó íå íà÷èñëåíà ÇÏ.
+-- 5. Найти всех работников кому не начислена ЗП.
 select monthly_salary, employee_name
 from employee_salary_82
 join salary_082 on employee_salary_82.salary_id = salary_082.id
 right join employees_82 on employee_salary_82.employee_id = employees_82.id 
 where monthly_salary is null;
 
--- 6. Âûâåñòè âñåõ ðàáîòíèêîâ ñ íàçâàíèÿìè èõ äîëæíîñòè.
+-- 6. Вывести всех работников с названиями их должности.
 select employee_name, role_name
 from roles_employee_082
 join roles_82 on roles_employee_082.role_id = roles_82.id 
 join employees_82 on roles_employee_082.employee_id = employees_82.id; 
 
--- 7. Âûâåñòè èìåíà è äîëæíîñòü òîëüêî Java ðàçðàáîò÷èêîâ.
+-- 7. Вывести имена и должность только Java разработчиков.
 select employee_name, role_name
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id
 join employees_82 on employees_82.id = roles_employee_082.employee_id
 where role_name like '%Java developer%';
 
--- 8. Âûâåñòè èìåíà è äîëæíîñòü òîëüêî Python ðàçðàáîò÷èêîâ.
+-- 8. Вывести имена и должность только Python разработчиков.
 select employee_name, role_name
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id
 join employees_82 on employees_82.id = roles_employee_082.employee_id
 where role_name like '%Python developer%';
 
--- 9. Âûâåñòè èìåíà è äîëæíîñòü âñåõ QA èíæåíåðîâ.
+-- 9. Вывести имена и должность всех QA инженеров.
 select employee_name, role_name
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id
 join employees_82 on employees_82.id = roles_employee_082.employee_id
 where role_name like '%QA engineer%';
 
--- 10. Âûâåñòè èìåíà è äîëæíîñòü ðó÷íûõ QA èíæåíåðîâ.
+-- 10. Вывести имена и должность ручных QA инженеров.
 select employee_name, role_name
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id
