@@ -79,8 +79,6 @@ values ('Aiden'),
        ('Victoria'), 
        ('William')
 
-select * from employees_82;
-
 --3.Создать таблицу salary_082
 --- id. Serial  primary key,
 --- monthly_salary. Int, not null
@@ -107,8 +105,6 @@ values (500),
        (7000),
        (7500),
        (8000);
-       
-select * from salary_082;
 
 --5. Создать таблицу employee_salary_82
 --- id. Serial  primary key,
@@ -119,10 +115,9 @@ CREATE TABLE employee_salary_82 (
     employee_id int not null unique,
     salary_id int not null
 );
-select * from employee_salary_82;
 
 --6. Наполнить таблицу employee_salary_82 40 строками:
-- в 10 строк из 40 вставить несуществующие employee_id
+--в 10 строк из 40 вставить несуществующие employee_id
 insert into employee_salary_82 (id, employee_id, salary_id)
 values (default, 1, 5), 
        (default, 3, 8), 
@@ -165,8 +160,6 @@ values (default, 1, 5),
        (default, 33, 1),
        (default, 15, 5);
 
-select * from employee_salary_82;
-
 --7. Создать таблицу roles_82
 --- id. Serial  primary key,
 --- role_name. int, not null, unique
@@ -174,7 +167,6 @@ CREATE TABLE roles_82 (
     id serial primary key,
     role_name int not null unique
 );
-select * from roles_82;
 
 --8. Поменять тип столбца role_name с int на varchar(30)
 alter table roles_82 
@@ -202,7 +194,6 @@ values ('Junior Python developer'),
 	   ('Junior Automation QA engineer'),
 	   ('Middle Automation QA engineer'),
 	   ('Senior Automation QA engineer');
-select * from roles_82;	  
 	  
 --10. Создать таблицу roles_employee_082
 --- id. Serial  primary key,
@@ -217,7 +208,6 @@ CREATE TABLE roles_employee_082 (
     foreign key (role_id) 
     references roles_82 (id)
 );
-select * from roles_employee_082;
 
 --11. Наполнить таблицу roles_employee_082 40 строками
 insert into roles_employee_082 (employee_id, role_id)
@@ -261,5 +251,4 @@ values (1, 17),
        (11, 6), 
        (26, 17), 
        (12, 4);
-      
-select * from roles_employee_082;      
+        
