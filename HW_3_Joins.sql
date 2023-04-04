@@ -72,14 +72,14 @@ join roles_82 on roles_82.id = roles_employee_082.role_id
 join employees_82 on employees_82.id = roles_employee_082.employee_id
 where role_name like '%Manual QA engineer%';
 
--- 11. Âûâåñòè èìåíà è äîëæíîñòü àâòîìàòèçàòîðîâ QA
+-- 11. Вывести имена и должность автоматизаторов QA
 select employee_name, role_name
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id
 join employees_82 on employees_82.id = roles_employee_082.employee_id
 where role_name like '%Automation QA%';
 
--- 12. Âûâåñòè èìåíà è çàðïëàòû Junior ñïåöèàëèñòîâ
+-- 12. Вывести имена и зарплаты Junior специалистов
 select employee_name, role_name, monthly_salary
 from roles_employee_082
 join employees_82 on employees_82.id = roles_employee_082.employee_id 
@@ -88,7 +88,7 @@ join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.e
 join salary_082 on salary_082.id = employee_salary_82.salary_id
 where role_name like '%Junior%';
 
--- 13. Âûâåñòè èìåíà è çàðïëàòû Middle ñïåöèàëèñòîâ
+-- 13. Вывести имена и зарплаты Middle специалистов
 select employee_name, role_name, monthly_salary
 from roles_employee_082
 join employees_82 on employees_82.id = roles_employee_082.employee_id 
@@ -97,7 +97,7 @@ join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.e
 join salary_082 on salary_082.id = employee_salary_82.salary_id
 where role_name like '%Middle%';
 
--- 14. Âûâåñòè èìåíà è çàðïëàòû Senior ñïåöèàëèñòîâ
+-- 14. Вывести имена и зарплаты Senior специалистов
 select employee_name, role_name, monthly_salary
 from roles_employee_082
 join employees_82 on employees_82.id = roles_employee_082.employee_id 
@@ -106,7 +106,7 @@ join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.e
 join salary_082 on salary_082.id = employee_salary_82.salary_id
 where role_name like '%Senior%';
 
--- 15. Âûâåñòè çàðïëàòû Java ðàçðàáîò÷èêîâ
+-- 15. Вывести зарплаты Java разработчиков
 select role_name, monthly_salary
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id 
@@ -114,7 +114,7 @@ join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.e
 join salary_082 on salary_082.id = employee_salary_82.salary_id
 where role_name like '%Java%';
 
--- 16. Âûâåñòè çàðïëàòû Python ðàçðàáîò÷èêîâ
+-- 16. Вывести зарплаты Python разработчиков
 select role_name, monthly_salary
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id 
