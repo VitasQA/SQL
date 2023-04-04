@@ -122,7 +122,7 @@ join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.e
 join salary_082 on salary_082.id = employee_salary_82.salary_id
 where role_name like '%Python developer%';
 
--- 17. Âûâåñòè èìåíà è çàðïëàòû Junior Python ðàçðàáîò÷èêîâ
+-- 17. Вывести имена и зарплаты Junior Python разработчиков
 select employee_name, role_name, monthly_salary
 from roles_employee_082
 join employees_82 on employees_82.id = roles_employee_082.employee_id 
@@ -131,7 +131,7 @@ join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.e
 join salary_082 on salary_082.id = employee_salary_82.salary_id
 where role_name like '%Junior Python developer%';
 
--- 18. Âûâåñòè èìåíà è çàðïëàòû Middle JS ðàçðàáîò÷èêîâ
+-- 18. Вывести имена и зарплаты Middle JS разработчиков
 select employee_name, role_name, monthly_salary
 from roles_employee_082
 join employees_82 on employees_82.id = roles_employee_082.employee_id 
@@ -140,7 +140,7 @@ join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.e
 join salary_082 on salary_082.id = employee_salary_82.salary_id
 where role_name like '%Middle JavaScript developer%';
 
--- 19. Âûâåñòè èìåíà è çàðïëàòû Senior Java ðàçðàáîò÷èêîâ
+-- 19. Вывести имена и зарплаты Senior Java разработчиков
 select employee_name, role_name, monthly_salary
 from roles_employee_082
 join employees_82 on employees_82.id = roles_employee_082.employee_id 
@@ -149,7 +149,7 @@ join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.e
 join salary_082 on salary_082.id = employee_salary_82.salary_id
 where role_name like '%Senior Java developer%';
 
--- 20. Âûâåñòè çàðïëàòû Junior QA èíæåíåðîâ
+-- 20. Вывести зарплаты Junior QA инженеров
 select role_name, monthly_salary
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id 
@@ -157,7 +157,7 @@ join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.e
 join salary_082 on salary_082.id = employee_salary_82.salary_id
 where role_name like '%Junior%QA%';
 
--- 21. Âûâåñòè ñðåäíþþ çàðïëàòó âñåõ Junior ñïåöèàëèñòîâ
+-- 21. Вывести среднюю зарплату всех Junior специалистов
 select AVG(monthly_salary)
 from employee_salary_82 es
 join salary_082 s on s.id = es.salary_id
@@ -165,7 +165,7 @@ join roles_employee_082 re on re.employee_id = es.employee_id
 join roles_82 r on r.id = re.role_id 
 where role_name like '%Junior%';
 
--- 22. Âûâåñòè ñóììó çàðïëàò JS ðàçðàáîò÷èêîâ
+-- 22. Вывести сумму зарплат JS разработчиков
 select SUM(monthly_salary)
 from employee_salary_82 es
 join salary_082 s on s.id = es.salary_id
@@ -173,7 +173,7 @@ join roles_employee_082 re on re.employee_id = es.employee_id
 join roles_82 r on r.id = re.role_id 
 where role_name like '%JavaScript developer%';
 
--- 23. Âûâåñòè ìèíèìàëüíóþ ÇÏ QA èíæåíåðîâ
+-- 23. Вывести минимальную ЗП QA инженеров
 select MIN(monthly_salary)
 from employee_salary_82 es
 join salary_082 s on s.id = es.salary_id
@@ -181,7 +181,7 @@ join roles_employee_082 re on re.employee_id = es.employee_id
 join roles_82 r on r.id = re.role_id 
 where role_name like '%QA engineer%';
 
--- 24. Âûâåñòè ìàêñèìàëüíóþ ÇÏ QA èíæåíåðîâ
+-- 24. Вывести максимальную ЗП QA инженеров
 select MAX(monthly_salary)
 from employee_salary_82 es
 join salary_082 s on s.id = es.salary_id
