@@ -218,7 +218,7 @@ join employee_salary_82 on employee_salary_82.employee_id  = roles_employee_082.
 join salary_082 on employee_salary_82.salary_id = salary_082.id 
 where role_name like '%developer%';
 
--- 29. Âûâåñòè èìåíà, äîëæíîñòè è ÇÏ âñåõ ñïåöèàëèñòîâ ïî âîçðàñòàíèþ
+-- 29. Вывести имена, должности и ЗП всех специалистов по возрастанию
 select  employee_name, role_name, monthly_salary
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id 
@@ -227,7 +227,7 @@ join employees_82 on roles_employee_082.employee_id = employees_82.id
 join salary_082 on employee_salary_82.employee_id  = salary_082.id 
 order by monthly_salary;
 
--- 30. Âûâåñòè èìåíà, äîëæíîñòè è ÇÏ âñåõ ñïåöèàëèñòîâ ïî âîçðàñòàíèþ ó ñïåöèàëèñòîâ ó êîòîðûõ ÇÏ îò 1700 äî 2300
+-- 30. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП от 1700 до 2300
 select employee_name, role_name, monthly_salary
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id 
@@ -238,7 +238,7 @@ where monthly_salary between 1700 and 2300
 order by monthly_salary;
 
 
--- 31. Âûâåñòè èìåíà, äîëæíîñòè è ÇÏ âñåõ ñïåöèàëèñòîâ ïî âîçðàñòàíèþ ó ñïåöèàëèñòîâ ó êîòîðûõ ÇÏ ìåíüøå 2300
+-- 31. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП меньше 2300
 select employee_name, role_name, monthly_salary
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id 
@@ -248,7 +248,7 @@ join salary_082 on employee_salary_82.employee_id = salary_082.id
 where monthly_salary < 2300
 order by monthly_salary;
 
--- 32. Âûâåñòè èìåíà, äîëæíîñòè è ÇÏ âñåõ ñïåöèàëèñòîâ ïî âîçðàñòàíèþ ó ñïåöèàëèñòîâ ó êîòîðûõ ÇÏ ðàâíà 1100, 1500, 2000
+-- 32. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП равна 1100, 1500, 2000
 select employee_name, role_name, monthly_salary
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id 
