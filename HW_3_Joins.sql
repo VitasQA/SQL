@@ -189,28 +189,28 @@ join roles_employee_082 re on re.employee_id = es.employee_id
 join roles_82 r on r.id = re.role_id 
 where role_name like '%QA engineer%';
 
--- 25. Âûâåñòè êîëè÷åñòâî QA èíæåíåðîâ
+-- 25. Вывести количество QA инженеров
 select count(role_name)
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id
 join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.employee_id 
 where role_name like '%QA%';
 
--- 26. Âûâåñòè êîëè÷åñòâî Middle ñïåöèàëèñòîâ.
+-- 26. Вывести количество Middle специалистов.
 select count(role_name)
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id 
 join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.employee_id
 where role_name like '%Middle%';
 
--- 27. Âûâåñòè êîëè÷åñòâî ðàçðàáîò÷èêîâ
+-- 27. Вывести количество разработчиков
 select count(role_name)
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id
 join employee_salary_82 on employee_salary_82.employee_id = roles_employee_082.employee_id
 where role_name like '%developer%';
 
--- 28. Âûâåñòè ôîíä (ñóììó) çàðïëàòû ðàçðàáîò÷èêîâ.
+-- 28. Вывести фонд (сумму) зарплаты разработчиков.
 select sum(monthly_salary)
 from roles_employee_082
 join roles_82 on roles_82.id = roles_employee_082.role_id 
